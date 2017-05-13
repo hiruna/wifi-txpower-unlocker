@@ -9,19 +9,23 @@ In the future I plan to modify the script to allow users to choose a specific re
 * 2.4 Ghz
 * Customized for Kali Linux
 
+## ubuntu-region-BO-wifi-txpower-unlocker.sh
+* Same as kali-linux-region-BO-wifi-txpower-unlocker.sh but added dependencies for Ubuntu
+
 ## Tested Devices
 * Raspberry Pi 3 running Kali Linux (with the kali-linux-full metapackage)
 * Virtual Machine running Kali Linux 64 bit
+* Ubuntu 16.04 LTS 64 bit
 
 ## Usage
 #### Increase TX power
 1. Login as root in Kali Linux
-2. Download kali-linux-region-BO-wifi-txpower-unlocker.sh
+2. Download kali-...sh or ubuntu-...sh script (or clone the repo)
 3. Open the script in a text editor and change change the value of the variable ```txpower``` to the desired value
 * I set the ```txpower``` to ```33``` in the script
-4. Grant execution permission using Terminal
+4. Grant execution permission using Terminal (use ubuntu-...sh script if using Ubuntu)
 * ```chmod +x kali-linux-region-BO-wifi-txpower-unlocker.sh```
-5. Execute the script
+5. Execute the script (use ubuntu-...sh script if using Ubuntu)
 * ```./kali-linux-region-BO-wifi-txpower-unlocker.sh```
 6. When prompted to reboot type ```'Y'``` and press ```[Enter]```
 7. After rebooting, login as root
