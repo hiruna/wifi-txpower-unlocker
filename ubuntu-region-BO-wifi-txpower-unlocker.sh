@@ -15,7 +15,7 @@ apt-get --yes update
 apt-get --yes upgrade
 
 #Download dependencies
-apt-get --yes install pkg-config libnl-3-dev libgcrypt11-dev libnl-genl-3-dev build-essential python-dev python-m2crypto
+apt-get --yes install pkg-config libnl-3-dev libgcrypt11-dev libnl-genl-3-dev build-essential python-dev python-m2crypto curl
 
 #Download latest CRDA and Wireless Regulatory DB
 latestCRDA=$(curl 'https://www.kernel.org/pub/software/network/crda/' |     grep -oP 'href="crda-\K[0-9]+\.[0-9]+' |     sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
