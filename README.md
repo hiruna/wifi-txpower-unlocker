@@ -12,6 +12,11 @@ In the future I plan to modify the script to allow users to choose a specific re
 ## ubuntu-region-BO-wifi-txpower-unlocker.sh
 * Same as kali-linux-region-BO-wifi-txpower-unlocker.sh but added dependencies for Ubuntu
 
+## arch-linux-region-BO-wifi-txpower-unlocker.sh
+* Region B0
+* 2.4 Ghz
+* Customized for Archlinux (and variants like manjaro)
+
 ## Tested Devices
 * Raspberry Pi 3 running Kali Linux (with the kali-linux-full metapackage)
 * Virtual Machine running Kali Linux 64 bit
@@ -20,7 +25,7 @@ In the future I plan to modify the script to allow users to choose a specific re
 ## Usage
 #### Increase TX power
 1. Login as root in Kali Linux
-2. Download kali-...sh or ubuntu-...sh script (or clone the repo)
+2. Download arch-...sh or kali-...sh or ubuntu-...sh script (or clone the repo)
 3. Open the script in a text editor and change change the value of the variable ```txpower``` to the desired value
 * I set the ```txpower``` to ```33``` in the script
 4. Grant execution permission using Terminal (use ubuntu-...sh script if using Ubuntu)
