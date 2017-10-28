@@ -1,9 +1,10 @@
 #!/bin/bash
 
-#title: kali-linux-region-BO-wifi-txpower-unlocker.sh
+#title: arch-linux-region-BO-wifi-txpower-unlocker.sh
 #description: Unlocks the wifi txpower of the 2.4Ghz band of the BO region 
 #author: Hiruna Wijesinghe https://github.com/hiruna/wifi-txpower-unlocker/
-#date: 13/05/2017
+#contributions: Timo Sarawinski https://github.com/muhviehstah
+#date: 28/10/2017
 
 #change the value to the tx power (dBm) you like
 txpower=33 #I set it to 33 as 33dBm ~ 2W
