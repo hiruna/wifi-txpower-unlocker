@@ -6,7 +6,7 @@
 #date: 13/05/2017
 
 #change the value to the tx power (dBm) you like
-txpower=33 #I set it to 33 as 33dBm ~ 2W
+txpower=25 #I set it to 33 as 33dBm ~ 2W
 
 set -e #Exit if any line fails
 
@@ -28,8 +28,23 @@ wget "https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-
 tar xvJf crda-${latestCRDA}.tar.xz
 tar xvJf wireless-regdb-${latestWRDB}.tar.xz
 
-#Change region 'BO's TXpower in db.txt
-sed -i "/country BO: DFS-JP/!b;n;c\\\t(2402 - 2482 @ 40), ($txpower)" wireless-regdb-${latestWRDB}/db.txt
+#inset txpower in db.txt
+
+sed -i -e 's/(5250 - 5350 @ 80), (30)/(5250 - 5350 @ 80), ('$txpower')/g' db.txt
+sed -i -e 's/(5470 - 5725 @ 160), (30)/(5470 - 5725 @ 160), ('$txpower')/g' db.txt
+sed -i -e 's/(5725 - 5875 @ 80), (30)/(5725 - 5875 @ 80), ('$txpower')/g' db.txt
+sed -i -e 's/(2402 - 2482 @ 40), (30)/(2402 - 2482 @ 40), ('$txpower')/g' db.txt
+sed -i -e 's/(5170 - 5250 @ 80), (30)/(5170 - 5250 @ 80), ('$txpower')/g' db.txt
+sed -i -e 's/(5250 - 5330 @ 80), (30)/(5250 - 5330 @ 80), ('$txpower')/g' db.txt
+sed -i -e 's/(5490 - 5710 @ 160), (30)/(5490 - 5710 @ 160), ('$txpower')/g' db.txt
+sed -i -e 's/(5170 - 5250 @ 80), (30)/(5170 - 5250 @ 80), ('$txpower')/g' db.txt
+sed -i -e 's/(5250 - 5330 @ 80), (30)/(5250 - 5330 @ 80), ('$txpower')/g' db.txt
+sed -i -e 's/(5490 - 5730 @ 160), (30)/(5490 - 5730 @ 160), ('$txpower')/g' db.txt
+sed -i -e 's/(2400 - 2494 @ 40), (30)/(2400 - 2494 @ 40), ('$txpower')/g' db.txt
+sed -i -e 's/(4910 - 5835 @ 40), (30)/(4910 - 5835 @ 40), ('$txpower')/g' db.txt
+
+#copy modified db.txt  
+cp db.txt wireless-regdb-${latestWRDB}/db.txt
 
 #compile regulatory.db
 make -C wireless-regdb-${latestWRDB}
