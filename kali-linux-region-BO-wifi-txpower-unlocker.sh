@@ -18,8 +18,8 @@ apt-get --yes upgrade
 apt-get --yes install pkg-config libnl-3-dev libgcrypt11-dev libnl-genl-3-dev build-essential
 
 #Download latest CRDA and Wireless Regulatory DB
-latestCRDA=$(curl 'https://www.kernel.org/pub/software/network/crda/' |     grep -oP 'href="crda-\K[0-9]+\.[0-9]+' |     sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
-latestWRDB=$(curl 'https://www.kernel.org/pub/software/network/wireless-regdb/' |     grep -oP 'href="wireless-regdb-\K[0-9]+\.[0-9]+\.[0-9]+' |     sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
+latestCRDA=$(curl -L 'https://www.kernel.org/pub/software/network/crda/' |     grep -oP 'href="crda-\K[0-9]+\.[0-9]+' |     sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
+latestWRDB=$(curl -L 'https://www.kernel.org/pub/software/network/wireless-regdb/' |     grep -oP 'href="wireless-regdb-\K[0-9]+\.[0-9]+\.[0-9]+' |     sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
 
 wget "https://www.kernel.org/pub/software/network/crda/crda-${latestCRDA}.tar.xz"
 wget "https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-${latestWRDB}.tar.xz"
