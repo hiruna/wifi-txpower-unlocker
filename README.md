@@ -4,15 +4,12 @@ A bash script that generates a modified regulatory.bin from [Central Regulatory 
 
 In the future I plan to modify the script to allow users to choose a specific region and a frequency range.
 
-## kali-linux-region-BO-wifi-txpower-unlocker.sh
+## wifi_txpower_unlocker.sh
+* Targeted at Ubuntu and Kali Linux
 * Region BO
 * 2.4 Ghz
-* Customized for Kali Linux
 
-## ubuntu-region-BO-wifi-txpower-unlocker.sh
-* Same as kali-linux-region-BO-wifi-txpower-unlocker.sh but added dependencies for Ubuntu
-
-## arch-linux-region-BO-wifi-txpower-unlocker.sh
+## arch-linux-region-BO-wifi-txpower-unlocker.sh (not maintained by me [@hiruna] )
 * Region B0
 * 2.4 Ghz
 * Customized for Archlinux (and variants like manjaro)
@@ -20,19 +17,17 @@ In the future I plan to modify the script to allow users to choose a specific re
 ## Tested Devices
 * Raspberry Pi 3 running Kali Linux (with the kali-linux-full metapackage)
 * Virtual Machine running Kali Linux 64 bit
-* Ubuntu 16.04 LTS 64 bit
+* Ubuntu 18.04 LTS 64 bit
 
 ## Usage
 #### Increase TX power
-1. Login as root in Kali Linux
-2. Download arch-...sh or kali-...sh or ubuntu-...sh script (or clone the repo)
-3. Open the script in a text editor and change change the value of the variable ```txpower``` to the desired value
-* I set the ```txpower``` to ```33``` in the script
-4. Grant execution permission using Terminal (use ubuntu-...sh script if using Ubuntu)
-* ```chmod +x kali-linux-region-BO-wifi-txpower-unlocker.sh```
-5. Execute the script (use ubuntu-...sh script if using Ubuntu)
-* ```./kali-linux-region-BO-wifi-txpower-unlocker.sh```
-6. When prompted to reboot type ```'Y'``` and press ```[Enter]```
+1. Login as root
+2. Download wifi_txpower_unlocker.sh or arch-...sh script (or clone the repo)
+3. Make the script executable
+* ```chmod +x wifi_txpower_unlocker.sh```
+5. Execute the script with the desired TX power (dBm) as a cli argument (I used 33 for 2W)
+* ```./wifi_txpower_unlocker.sh 33```
+6. When prompted to reboot type ```'y'``` and press ```[Enter]```
 7. After rebooting, login as root
 #### Set the txpower of the interface
 1. Run ```iwconfig``` or ```ifconfig``` to determine your wireless interface

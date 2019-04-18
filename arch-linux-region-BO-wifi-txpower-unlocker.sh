@@ -8,8 +8,18 @@
 #contributions: Timo Sarawinski https://github.com/muhviehstah
 #date: 31/12/2017
 
-#change the value to the tx power (dBm) you like
-txpower=33 #I set it to 33 as 33dBm ~ 2W
+# Input the desired transmit power (dBm) (I used 33dBm for 2W)
+txpower="$1"
+
+if [ -z $txpower ]; then
+	echo "TX power not specified. Exitting..." 1>&2
+	exit 1
+fi
+
+if ! [[ "$txpower" =~ ^[0-9]+$ ]]; then
+    echo "TX power input must be an integer. Exitting..."
+	exit 1
+fi
 
 #Download and install the aur package and set txpower to selected value
 cd /tmp
